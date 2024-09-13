@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cab Booking System</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://cdn.pixabay.com/photo/2017/08/30/05/50/car-2698990_1280.jpg'); /* Background car image */
+            background-size: cover;
+            background-position: center;
+        }
+        header, footer {
+            background-color: rgba(44, 62, 80, 0.8); /* Semi-transparent background */
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0 15px;
+            font-size: 18px;
+        }
+        .container {
+            padding: 20px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for readability */
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 10px;
+        }
+        input[type="text"], input[type="email"], input[type="date"], input[type="time"], select, textarea {
+            width: 80%;
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px 20px;
+            font-size: 18px;
+        }
+        input[type="submit"]:hover {
+            background-color: #2ecc71;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #34495e;
+            color: white;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        function showSection(sectionId) {
+            var sections = ['home', 'about', 'contact', 'driver-details'];
+            sections.forEach(function(section) {
+                document.getElementById(section).classList.add('hidden');
+            });
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+    </script>
+</head>
+<body>
+
+<!-- Main Content -->
+<div id="main-content">
+    <!-- Header -->
+    <header>
+        <h1>Cab Booking System</h1>
+        <nav>
+            <a href="#home" onclick="showSection('home')">Home</a>
+            <a href="#about" onclick="showSection('about')">About</a>
+            <a href="#contact" onclick="showSection('contact')">Contact</a>
+            <a href="#driver-details" onclick="showSection('driver-details')">Driver Details</a>
+        </nav>
+    </header>
+
+    <!-- Home Section with Cab Booking Form -->
+    <div id="home" class="container">
+        <h1>Welcome to Cab Booking System</h1>
+        <p>We offer a convenient and reliable cab booking service that allows you to travel anywhere within the city. Choose from a variety of cabs ranging from economy to luxury options.</p>
+        <h2>Book Your Cab</h2>
+        <form action="#" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required><br>
+            <input type="email" name="email" placeholder="Your Email" required><br>
+            <input type="text" name="pickup" placeholder="Pickup Location" required><br>
+            <input type="text" name="destination" placeholder="Destination" required><br>
+            <input type="date" name="date" required><br>
+            <input type="time" name="time" required><br>
+            <select name="cab-type" required>
+                <option value="">Select Cab Type</option>
+                <option value="economy">Economy</option>
+                <option value="standard">Standard</option>
+                <option value="luxury">Luxury</option>
+            </select><br>
+            <textarea name="special-requests" placeholder="Any Special Requests" rows="3"></textarea><br>
+            <input type="submit" value="Book Cab">
+        </form>
+    </div>
+
+    <!-- About Section -->
+    <div id="about" class="container hidden">
+        <h1>About Us</h1>
+        <p>We are committed to providing a safe and reliable cab booking service. Whether you're commuting to work, heading to the airport, or need a ride for a special occasion, we have a range of cabs to suit your needs. Our drivers are experienced and fully licensed to ensure your safety and comfort.</p>
+        <p>With our easy-to-use platform, you can book a cab in just a few clicks and choose from a variety of payment options for your convenience. Our customer support is available 24/7 to assist with any queries or concerns.</p>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contact" class="container hidden">
+        <h1>Contact Us</h1>
+        <form action="#" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required><br>
+            <input type="email" name="email" placeholder="Your Email" required><br>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea><br>
+            <input type="submit" value="Send Message">
+        </form>
+    </div>
+
+    <!-- Driver Details Section -->
+    <div id="driver-details" class="container hidden">
+        <h1>Driver Details</h1>
+        <table>
+            <tr>
+                <th>Driver Name</th>
+                <th>License Number</th>
+                <th>Phone Number</th>
+                <th>Experience</th>
+            </tr>
+            <tr>
+                <td>John Doe</td>
+                <td>AB123456</td>
+                <td>(123) 456-7890</td>
+                <td>5 years</td>
+            </tr>
+            <tr>
+                <td>Jane Smith</td>
+                <td>XY987654</td>
+                <td>(987) 654-3210</td>
+                <td>3 years</td>
+            </tr>
+            <tr>
+                <td>Mark Johnson</td>
+                <td>GH345678</td>
+                <td>(456) 789-0123</td>
+                <td>4 years</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Cab Booking System. All rights reserved.</p>
+    </footer>
+</div>
+
+</body>
+</html>
